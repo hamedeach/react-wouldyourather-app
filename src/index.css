@@ -1,13 +1,112 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+nav {
+  padding: .15em 0;
+  width: 100%;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+nav ul {
+  display: flex;
+}
+
+nav ul li {
+  margin-left: 2.5em;
+  list-style-type: none;
+  text-decoration: none;
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 32px;
+  line-height: 39px;
+  text-align: center;
+  color: #000000;
+  cursor: pointer;
+
+}
+
+hr {
+  position: relative;
+  height: 0px;
+  left: 0px;
+  border: 1px solid #2DC6BC;
+
+}
+
+
+img {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 40%;
+}
+
+.login-box-div {
+  margin: auto;
+  border: 3px solid #E7E3E3;
+  width: 60%;
+}
+
+.login-box-title {
+  background: #F1EEEE;
+}
+
+h2 {
+  margin: auto;
+  padding: 10px;
+  text-align: center;
+}
+
+h3 {
+  margin: auto;
+  padding: 10px;
+  text-align: center;
+}
+
+.colored-title {
+  color: #2DC6BC;
+  text-align: center;
+  margin: auto;
+  padding: 10px;
+  text-align: center;
+
+}
+
+select {
+  display: block;
+  margin: auto;
+  cursor: pointer;
+  width: 50%;
+  height: 30px;
+
+
+}
+
+.custom-select {
+  position: relative;
+  font-family: Arial;
+  margin: auto;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  padding: 5px;
+}
+
+.signin-button {
+
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  padding: 5px;
+
+}
+
+button {
+  width: 50%;
+  background: #2DC6BC;
+  border: #F1EEEE;
+  color: #ffff;
+  height: 30px;
+
+
 }
