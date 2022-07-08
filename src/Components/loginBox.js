@@ -1,7 +1,8 @@
-import Logo from '../../assets/Logo.png';
+import Logo from '../assets/Logo.png';
 import React from "react";
 
-export default function LoginBox() {
+
+export default function LoginBox() { 
     return (
         <div className='login-box-div'>
             <div className='login-box-title'>
@@ -19,7 +20,7 @@ export default function LoginBox() {
                     </select>
                 </div>
                 <div className='signin-button'>
-                    <button> Sign in </button>
+                    <button onClick={textclick}> Sign in </button>
                 </div>
 
 
@@ -28,4 +29,11 @@ export default function LoginBox() {
         </div>
 
     )
+
+    
+}
+
+function textclick(){
+    alert();
+
 }

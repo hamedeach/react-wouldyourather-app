@@ -42,9 +42,10 @@ img {
 }
 
 .login-box-div {
-  margin: auto;
   border: 3px solid #E7E3E3;
-  width: 60%;
+  width: 50%;
+  margin-top: 100px;
+  margin-left: 25%;
 }
 
 .login-box-title {
@@ -107,6 +108,8 @@ button {
   border: #F1EEEE;
   color: #ffff;
   height: 30px;
+  cursor: pointer;
+
 
 
 }
