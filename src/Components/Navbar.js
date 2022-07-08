@@ -5,11 +5,12 @@ export default function Navbar() {
     return (
         <nav>
             <ul>
-                <li>Home</li>
-                <li>New Question</li>
-                <li>Leader Board</li>
+
+                <li className="active-navitem">Home</li>
+                <li className="navbar-item" >New Question</li>
+                <li className="navbar-item">Leader Board</li>
             </ul>
-           
+
         </nav>
 
     )

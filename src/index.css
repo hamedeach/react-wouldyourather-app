@@ -9,17 +9,35 @@ nav ul {
 
 nav ul li {
   margin-left: 2.5em;
-  list-style-type: none;
-  text-decoration: none;
-  font-family: 'Inter';
-  font-style: normal;
   font-weight: 400;
   font-size: 32px;
   line-height: 39px;
   text-align: center;
   color: #000000;
   cursor: pointer;
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  width: 10px;
+  background-color: #ffffff;
 
+}
+
+.navbar-item ,.active-navitem{
+  width: 50%;
+  height: 100%;
+  padding: 0%;
+}
+
+.navbar-item:hover {
+  background-color:darkgray;
+  color: #ffffff;
+}
+
+.active-navitem {
+  background-color: #2DC6BC;
+  color: #ffffff;
+  
 }
 
 hr {
@@ -27,6 +45,7 @@ hr {
   height: 0px;
   left: 0px;
   border: 1px solid #2DC6BC;
+ 
 
 }
 
@@ -119,33 +138,40 @@ button {
   border-radius: 50%;
 }
 
-.user-container{
+.user-container {
   display: flex;
   flex-direction: row;
   justify-content: flex-end;
 }
 
-.homebar-container{
+.homebar-container {
   display: flex;
   flex-direction: row;
-  
+
 
 }
 
-.navbar-container{
+.navbar-container {
   flex: 4;
 
 }
 
-.userinfo-container{
+.userinfo-container {
   flex: 1;
   margin: 10px;
 
 }
 
-.userinfo-text{
+.userinfo-text {
   margin: 10px;
   font-size: x-large;
   vertical-align: middle;
 
+}
+
+.home-body{
+  display: flex;
+  background-color:#2DC6BC;
+  width: 100%;
+  height: 800px;
 }

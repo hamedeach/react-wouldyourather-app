@@ -20,6 +20,9 @@ class Home extends Component {
                     <hr></hr>
 
                 </div>
+                <div className="home-body">
+
+                </div>
 
             </div>
 
