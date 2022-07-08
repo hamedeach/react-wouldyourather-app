@@ -9,7 +9,7 @@ export default function Navbar() {
                 <li>New Question</li>
                 <li>Leader Board</li>
             </ul>
-            <hr></hr>
+           
         </nav>
 
     )
