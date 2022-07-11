@@ -4,8 +4,8 @@ import React from "react";
 
 export default function LoginBox() { 
     return (
-        <div className='login-box-div'>
-            <div className='login-box-title'>
+        <div className='box-div'>
+            <div className='box-title'>
                 <h2>Welcome to the Would You Rather App!</h2>
                 <h3>Please sign in to continue</h3>
             </div>

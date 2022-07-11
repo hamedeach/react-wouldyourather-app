@@ -1,13 +1,27 @@
 
 
-import Navbar from './Navbar.js';
-import LoginBox from './loginBox.js';
+import LoginBox from './LoginBox.js';
 import Home from './Home.js';
+import Navbar from "./Navbar";
+import UserInfo from "./UserInfo";
+import NewQuestion from './NewQuestion.js';
 
 function App() {
   return (
     <div className="App">
-     <Home/>
+      <div>
+        <div className="homebar-container">
+          <div className="navbar-container">
+            <Navbar />
+          </div>
+          <div className="userinfo-container">
+            <UserInfo />
+          </div>
+
+        </div>
+        <hr></hr>
+      </div>
+      <NewQuestion />
     </div>
   );
 }
