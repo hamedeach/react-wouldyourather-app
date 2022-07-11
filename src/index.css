@@ -50,6 +50,7 @@ hr {
   height: 0px;
   left: 0px;
   border: 1px solid #2DC6BC;
+  width: 100%;
   
 }
 
@@ -209,4 +210,102 @@ textarea{
   width: 100%;
 
 }
+
+
+.leaderboard-item{
+  display: flex;
+  flex-direction: column;
+ 
+  width: 50%;
+  margin-top: 100px;
+  margin-left: 25%;
+}
+/*
+.rank-box  {
+  display: flex;
+  flex-direction: row;
+  
+  
+
+  
+
+}
+*/
+
+.rank-cup{
+  flex: 0.5;
+  text-align: center;
+  border: 3px solid #E7E3E3;
+}
+
+.ranked-user{
+  display: flex;
+  flex-direction: row;
+
+}
+
+.rank-user-details{
+  display: flex;
+  flex-direction: column;
+  flex: 4;
+  border: 3px solid #E7E3E3;
+
+}
+
+
+.ranked-user-info{
+  display: flex;
+  flex-direction: column;
+  border: 3px solid #E7E3E3;
+ 
+}
+
+.ranked-avatar {
+  vertical-align: middle;
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+}
+.cup-img{
+  display: flex;
+  width: 50px;
+  height: 60px;
+ 
+ 
+  
+}
+
+.rank-questions-detials{
+  display: flex;
+  flex-direction: row;
+  height: 50%;
+ 
+}
+
+
+.rank-score{
+  display: flex;
+  flex-direction: column;
+  border: 3px solid #E7E3E3;
+  text-align: center;
+  flex: 1;
+  text-align: center;
+}
+
+.detial-txt{
+  flex: 2;
+}
+
+.questions-no{
+  flex:1;
+ text-align: center;
+
+}
+
+.score-detials{
+  height: 50%;
+  text-align: center;
+ 
+}
+
 

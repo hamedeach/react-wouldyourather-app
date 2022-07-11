@@ -5,6 +5,7 @@ import Home from './Home.js';
 import Navbar from "./Navbar";
 import UserInfo from "./UserInfo";
 import NewQuestion from './NewQuestion.js';
+import Leaderboard from './Leaderboard.js';
 
 function App() {
   return (
@@ -21,7 +22,7 @@ function App() {
         </div>
         <hr></hr>
       </div>
-      <NewQuestion />
+      <Leaderboard />
     </div>
   );
 }
