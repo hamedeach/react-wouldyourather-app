@@ -26,8 +26,8 @@ class UserInfo extends Component {
                 <div>
                     <img src={autheduser_avatarURL} alt={`avatar of ${autheduser_name}`} className='avatar' />
                 </div>
-                <div className="userinfo-text">
-                    <span onClick={this.logout} >Logout</span>
+                <div className="logout-btn">
+                    <span  onClick={this.logout} >Logout</span>
                 </div>
             </div>
         )

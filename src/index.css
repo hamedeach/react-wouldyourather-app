@@ -131,6 +131,16 @@ select {
 .signin-button:hover:enabled{
   transform: scale(1.1) perspective(1px)
 }
+.logout-btn{
+  cursor: pointer;
+}
+
+.logout-btn:hover{
+  background-color: #2DC6BC;
+  color: #ffffff;
+  transform: scale(1.1) perspective(1px)
+ 
+}
 
 .signin-button:disabled{
   background-color: lightgrey;
@@ -178,7 +188,7 @@ button {
 
 }
 
-.userinfo-text {
+.userinfo-text ,.logout-btn{
   margin: 10px;
   font-size: x-large;
   vertical-align: middle;
