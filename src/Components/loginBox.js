@@ -3,17 +3,12 @@ import React, { Component } from "react";
 
 
 import { connect } from 'react-redux';
-import { handleInitialData } from '../actions/shared'
+
 import { setAuthedUser } from '../actions/authedUser'
 
 
 class LoginBox extends Component {
 
-    componentDidMount() {
-       
-        this.props.dispatch(handleInitialData());
-
-    }
 
     signin= (e) => {
         const userid = document.getElementById('userid-select').value;
