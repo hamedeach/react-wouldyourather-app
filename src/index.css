@@ -124,11 +124,18 @@ select {
 
 .signin-button {
 
-  width: 100%;
-  display: flex;
-  justify-content: center;
-  padding: 5px;
+  width: 60%;
+  margin: 5px auto;
+  display: block;
+}
+.signin-button:hover:enabled{
+  transform: scale(1.1) perspective(1px)
+}
 
+.signin-button:disabled{
+  background-color: lightgrey;
+  color: darkgray;
+  
 }
 
 button {
