@@ -1,16 +1,23 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import './index.css';
-import App from './Components/App'
+//import App from './Components/App'
 import LoginBox from './Components/LoginBox';
 import reportWebVitals from './reportWebVitals';
 
+import { createStore } from 'redux';
+import { Provider } from 'react-redux';
+import reducers from './reducers';
+import middleware from './middleware';
 
+const store = createStore(reducers,middleware);
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-    <App />
+    <Provider store={store}>
+      <LoginBox />
+    </Provider>
   </React.StrictMode>
 );
 
