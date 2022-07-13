@@ -6,6 +6,8 @@ import Navbar from "./Navbar";
 import UserInfo from "./UserInfo";
 import NewQuestion from './NewQuestion.js';
 import Leaderboard from './Leaderboard.js';
+import AnsweredQuestion from './AnsweredQuestion.js';
+import UnansweredQuestion from './UnansweredQuestion.js';
 
 function App() {
   return (
@@ -22,7 +24,8 @@ function App() {
         </div>
         <hr></hr>
       </div>
-      <Leaderboard />
+      <UnansweredQuestion/>
+
     </div>
   );
 }
