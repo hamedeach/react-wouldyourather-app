@@ -1,13 +1,16 @@
 
 
-import LoginBox from './LoginBox.js';
-import Home from './Home.js';
+
 import Navbar from "./Navbar";
 import UserInfo from "./UserInfo";
-import NewQuestion from './NewQuestion.js';
-import Leaderboard from './Leaderboard.js';
-import AnsweredQuestion from './AnsweredQuestion.js';
-import UnansweredQuestion from './UnansweredQuestion.js';
+//import LoginBox from './LoginBox.js';
+//import Home from './Home.js';
+//import NewQuestion from './NewQuestion.js';
+//import Leaderboard from './Leaderboard.js';
+//import AnsweredQuestion from './AnsweredQuestion.js';
+//import UnansweredQuestion from './UnansweredQuestion.js';
+import PollList from './PollList.js';
+
 
 function App() {
   return (
@@ -24,7 +27,8 @@ function App() {
         </div>
         <hr></hr>
       </div>
-      <UnansweredQuestion/>
+
+      <PollList />
 
     </div>
   );
