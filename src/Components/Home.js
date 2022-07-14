@@ -4,6 +4,7 @@ import UserInfo from "./UserInfo";
 import PollList from './PollList.js';
 
 import NewQuestion from './NewQuestion.js';
+import AnsweredQuestion from './AnsweredQuestion.js'
 
 
 class Home extends Component {
@@ -40,6 +41,12 @@ class Home extends Component {
                     <hr></hr>
                 </div>
 
+
+                <AnsweredQuestion Pollid={'8xf0y6ziyjabvozdd253nd'}/>
+                
+                <br /><br /><br /><br /><br /><br /><br /><br />
+                <br />
+                <hr />
                 <NewQuestion />
                 <br />
                 <hr />
