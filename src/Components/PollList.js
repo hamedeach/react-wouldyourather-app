@@ -6,7 +6,7 @@ class PollList extends Component {
 
     render() {
 
-        const { authedUser,users, questions } = this.props;
+        const { authedUser, users, questions } = this.props;
         return (
             <div className="polls-div">
                 <div className="poll-tab">
@@ -15,13 +15,13 @@ class PollList extends Component {
                 </div>
                 <ul>
                     {
-                        questions.map((ques)=>(
+                        questions.map((ques) => (
                             <li key={ques.id}>
-                                <Poll pollid={ques.id}/>
+                                <Poll pollid={ques.id} />
                             </li>
                         ))
                     }
-                   
+
                 </ul>
             </div>
         )
@@ -33,9 +33,11 @@ function mapStateToProps({ authedUser, users, questions }) {
     return {
         authedUser,
         users: Object.keys(users).map(id => {
-            return users[id]}),
+            return users[id]
+        }),
         questions: Object.keys(questions).map(id => {
-            return questions[id]}),
+            return questions[id]
+        }).sort((a, b) => b.timestamp - a.timestamp),
     }
 
 }

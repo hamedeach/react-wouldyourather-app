@@ -11,12 +11,6 @@ class Poll extends Component {
         const question_user_id = author_obj.id;
         const question_user_name=author_obj.name;
         const question_user_avatarURL=author_obj.avatarURL;
-
-        
-
-
-       
-
         return (
             <div className="poll-container">
                 <div>

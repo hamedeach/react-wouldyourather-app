@@ -81,8 +81,12 @@ img {
   background: #F1EEEE;
 }
 
+h1{
+  padding-left: 5px;
+}
+
 h2 {
-  margin: auto;
+  
   padding: 10px;
   text-align: center;
 
@@ -150,7 +154,9 @@ select {
 }
 
 button {
-  width: 100%;
+ margin: auto;
+ 
+  width: 50%;
   background: #2DC6BC;
   border: #F1EEEE;
   color: #ffff;
@@ -364,7 +370,7 @@ textarea {
 .poll-tab {
   display: flex;
   flex-direction: row;
-  border: 3px solid #E7E3E3;
+  border-bottom: 3px solid #E7E3E3;
   margin: 10px;
 }
 
@@ -391,7 +397,9 @@ textarea {
 .poll-container {
   display: flex;
   flex-direction: column;
-  margin: 10px;
+  margin-left: -11px;
+  margin-right: 25px;
+  margin-bottom: 20px;
   border: 3px solid #E7E3E3;
  
 }
@@ -400,10 +408,12 @@ textarea {
   display: flex;
   flex-direction: row;
   margin: 5px;
-  border: 3px solid #E7E3E3;
+  border-top:  3px solid #E7E3E3;
 }
 
 .poll-info-container {
+  display: flex;
+  flex-direction: column;
   flex: 3;
   margin: 10px;
   border-left: 3px solid #E7E3E3;
