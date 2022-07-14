@@ -6,6 +6,7 @@ import PollList from './PollList.js';
 import NewQuestion from './NewQuestion.js';
 import AnsweredQuestion from './AnsweredQuestion.js'
 import UnasweredQuestion from './UnansweredQuestion.js'
+import Leaderboard from "./Leaderboard";
 
 
 class Home extends Component {
@@ -42,6 +43,11 @@ class Home extends Component {
                     <hr></hr>
                 </div>
 
+
+                <Leaderboard />
+                <br /><br /><br /><br /><br /><br /><br /><br />
+                <br />
+                <hr />
 
 
                 <UnasweredQuestion Pollid={'8xf0y6ziyjabvozdd253nd'} />
