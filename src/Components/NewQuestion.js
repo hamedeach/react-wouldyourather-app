@@ -33,7 +33,6 @@ class NewQuestion extends Component {
         e.preventDefault();
         const { optionOneText, optionTwoText } = this.state
         const{dispatch} = this.props
-        
         dispatch(handleAsyncAddPoll(optionOneText,optionTwoText))
 
         console.log('New Poll was added..');
