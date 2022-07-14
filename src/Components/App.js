@@ -1,9 +1,5 @@
 
 
-
-
-
-
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { handleInitialData } from '../actions/shared'
@@ -28,19 +24,30 @@ class App extends Component {
 
 
   render() {
-    const autheduser = this.props.authedUser;
+    const { authedUser, isloading } = this.props;
     return (
-      (autheduser === null) ?
-        <LoginBox />
+      (isloading === true) ?
+        null
         :
-        <Home />
+        (
+          (authedUser === null) ?
+            <LoginBox />
+
+            :
+
+            <Home />
+        )
+
+
     );
+
   }
 }
 
-function mapStateToProps({ authedUser }) {
+function mapStateToProps({ authedUser, users }) {
   return {
     authedUser,
+    isloading: (Object.keys(users).length === 0)
   }
 
 }

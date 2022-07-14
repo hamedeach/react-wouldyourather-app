@@ -7,20 +7,22 @@ class PollList extends Component {
     render() {
 
         const { authedUser,users, questions } = this.props;
-        console.log('/*/*/*/*/*');
-        console.log(questions);
         return (
             <div className="polls-div">
                 <div className="poll-tab">
                     <h2 className="active-poll-tab-op">not Answer Questions</h2>
                     <h2 className="poll-tab-op">Answer Questions</h2>
                 </div>
-                <div>
-                    <Poll />
-                    <Poll />
-                    <Poll />
-
-                </div>
+                <ul>
+                    {
+                        questions.map((ques)=>(
+                            <li key={ques.id}>
+                                <Poll pollid={ques.id}/>
+                            </li>
+                        ))
+                    }
+                   
+                </ul>
             </div>
         )
     }
@@ -30,8 +32,10 @@ class PollList extends Component {
 function mapStateToProps({ authedUser, users, questions }) {
     return {
         authedUser,
-        users,
-        questions,
+        users: Object.keys(users).map(id => {
+            return users[id]}),
+        questions: Object.keys(questions).map(id => {
+            return questions[id]}),
     }
 
 }

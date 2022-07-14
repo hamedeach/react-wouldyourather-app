@@ -1,3 +1,4 @@
+import { type } from '@testing-library/user-event/dist/type'
 import {getInitialData} from '../utils/api'
 import { receiveQuestions } from './questions'
 import { receiveUsers } from './users'
@@ -10,6 +11,7 @@ export function handleInitialData(){
         return getInitialData().then(({users,questions})=>{
             dispatch(receiveUsers(users))
             dispatch(receiveQuestions(questions))
+           
         })
     }
 }
