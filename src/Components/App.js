@@ -4,7 +4,7 @@
 
 
 
-import React, { Component, Fragment } from 'react';
+import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { handleInitialData } from '../actions/shared'
 import LoginBox from './loginBox.js';
