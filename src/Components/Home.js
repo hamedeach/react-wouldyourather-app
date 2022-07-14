@@ -3,6 +3,8 @@ import Navbar from "./Navbar";
 import UserInfo from "./UserInfo";
 import PollList from './PollList.js';
 
+import NewQuestion from './NewQuestion.js';
+
 
 class Home extends Component {
     constructor(props) {
@@ -13,7 +15,7 @@ class Home extends Component {
 
     }
 
-    changePollsTab=(tabid)=> {
+    changePollsTab = (tabid) => {
 
         this.setState(() => ({
             poll_tab_id: tabid
@@ -38,6 +40,9 @@ class Home extends Component {
                     <hr></hr>
                 </div>
 
+                <NewQuestion />
+                <br />
+                <hr />
                 <PollList PollTabID={this.state.poll_tab_id} ChangePollsTab={this.changePollsTab} />
 
             </div>

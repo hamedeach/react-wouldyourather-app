@@ -127,13 +127,18 @@ select {
   padding: 5px;
 }
 
-.signin-button {
+button {
+  cursor: pointer;
+  background: #2DC6BC;
+  border: #F1EEEE;
+  color: #ffff;
 
   width: 60%;
   margin: 5px auto;
   display: block;
+  height: 50px;
 }
-.signin-button:hover:enabled{
+button:hover:enabled{
   transform: scale(1.1) perspective(1px)
 }
 .logout-btn{
@@ -147,22 +152,13 @@ select {
  
 }
 
-.signin-button:disabled{
+button:disabled{
   background-color: lightgrey;
   color: darkgray;
   
 }
 
-button {
- margin: auto;
- 
-  width: 50%;
-  background: #2DC6BC;
-  border: #F1EEEE;
-  color: #ffff;
-  height: 30px;
-  cursor: pointer;
-}
+
 
 
 .avatar {
@@ -228,15 +224,7 @@ textarea {
   height: 100px;
 }
 
-.submit-btn {
-  background: #2DC6BC;
-  border: #F1EEEE;
-  color: #ffff;
-  height: 30px;
-  cursor: pointer;
-  width: 100%;
 
-}
 
 
 .leaderboard-item {

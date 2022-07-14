@@ -8,7 +8,7 @@ import Home from './Home.js';
 import LoadingBar from 'react-redux-loading-bar'
 
 
-//import NewQuestion from './NewQuestion.js';
+
 //import Leaderboard from './Leaderboard.js';
 //import AnsweredQuestion from './AnsweredQuestion.js';
 //import UnansweredQuestion from './UnansweredQuestion.js';
