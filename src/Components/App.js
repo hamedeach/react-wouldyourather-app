@@ -5,6 +5,7 @@ import { connect } from 'react-redux';
 import { handleInitialData } from '../actions/shared'
 import LoginBox from './loginBox.js';
 import Home from './Home.js';
+import LoadingBar from 'react-redux-loading-bar'
 
 
 //import NewQuestion from './NewQuestion.js';
@@ -27,7 +28,7 @@ class App extends Component {
     const { authedUser, isloading } = this.props;
     return (
       (isloading === true) ?
-        null
+        <LoadingBar/>
         :
         (
           (authedUser === null) ?
