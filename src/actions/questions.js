@@ -1,6 +1,7 @@
 
 import { saveNewQuestion, submitAnswer } from '../utils/api'
 import { showLoading, hideLoading } from 'react-redux-loading-bar'
+import {handleUserAddPoll} from '../actions/users'
 
 
 
@@ -51,14 +52,11 @@ export function handleAsyncAddPoll(optionOneText, optionTwoText) {
     return (dispatch, getState) => {
         const { authedUser } = getState();
         dispatch(showLoading());
-
-        return saveNewQuestion({
-            optionOneText,
-            optionTwoText,
-            author: authedUser,
-        }
+        return saveNewQuestion({optionOneText,optionTwoText,author: authedUser,}
         ).then((poll) => {
+            debugger;
             dispatch(addQuestion(poll));
+            dispatch(handleUserAddPoll(authedUser,poll.id))
             dispatch(hideLoading());
         }
         ).catch((e) => {

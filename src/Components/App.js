@@ -10,8 +10,11 @@ import Navbar from "./Navbar";
 import UserInfo from "./UserInfo";
 import NewQuestion from './NewQuestion.js';
 import Leaderboard from "./Leaderboard";
+import UnansweredQuestion from './UnansweredQuestion';
+import AnsweredQuestion from './AnsweredQuestion';
+import NotFound from './Notfound'
 
-import { BrowserRouter as Router, Routes, Route, Switch } from 'react-router-dom';
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 
 
 
@@ -35,34 +38,32 @@ class App extends Component {
         <LoadingBar />
         :
         (
-
           (authedUser === null) ?
             <LoginBox />
-
             :
-
             <Fragment>
-
-              <div>
-                <div className="homebar-container">
-                  <div className="navbar-container">
-                    <Navbar />
-                  </div>
-                  <div className="userinfo-container">
-                    <UserInfo />
-                  </div>
-                </div>
-                <hr></hr>
-              </div>
-
-
-
               <Router>
+
+                <div>
+                  <div className="homebar-container">
+                    <div className="navbar-container">
+                      <Navbar />
+                    </div>
+                    <div className="userinfo-container">
+                      <UserInfo />
+                    </div>
+                  </div>
+                  <hr></hr>
+                </div>
                 <Routes>
-                  <Route path='/' element={<Home/>} />
-                  <Route path='/add' element={<NewQuestion/>} />
-                  <Route path='/leaderboard' element={<Leaderboard/>} />
+                  <Route path='/' element={<Home />} />
+                  <Route path='/add' element={<NewQuestion />} />
+                  <Route path='/leaderboard' element={<Leaderboard />} />
+                  <Route path='/question/:id' element={<UnansweredQuestion />} />
+                  <Route path='/result/:id' element={<AnsweredQuestion />} />
+                  <Route path="*" element={<NotFound />} />
                 </Routes>
+
               </Router>
             </Fragment>
         )

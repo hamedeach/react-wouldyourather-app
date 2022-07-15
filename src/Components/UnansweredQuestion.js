@@ -1,10 +1,14 @@
 
 import React, { Component } from "react";
 import { connect } from 'react-redux';
-import {handleAsyncAddPoll,handleAsynSubmitAnswer} from '../actions/questions'
+import { handleAsyncAddPoll, handleAsynSubmitAnswer } from '../actions/questions'
+
+
+
 
 
 class UnansweredQuestion extends Component {
+
 
     state = {
         answer: '',
@@ -37,8 +41,8 @@ class UnansweredQuestion extends Component {
         e.preventDefault();
         /* to-do submit answer */
         const { answer } = this.state;
-        const { dispatch ,pollid,authedUser} = this.props;
-        dispatch(handleAsynSubmitAnswer(pollid,answer));
+        const { dispatch, pollid, authedUser } = this.props;
+        dispatch(handleAsynSubmitAnswer(pollid, answer));
         console.log('Submit poll answer..');
         this.setState(() => ({
             answer: '',
@@ -51,7 +55,16 @@ class UnansweredQuestion extends Component {
 
 
     render() {
-        const { authedUser, pollid, questions, users } = this.props
+       
+        debugger;
+        return(
+            <p>hiiii</p>
+        )
+    }
+
+        
+        /*
+        const { authedUser, questions, users } = this.props
         const question_obj = questions.find((q) => { return q.id === pollid })
         const author_obj = users.find((u) => { return u.id === question_obj.author })
         const question_user_name = author_obj.name;
@@ -101,13 +114,12 @@ class UnansweredQuestion extends Component {
             </div>
         )
     }
+    */
 }
 
 
-function mapStateToProps({ authedUser, users, questions }, pollid) {
+function mapStateToProps({ authedUser, users, questions }) {
     return {
-
-        pollid: pollid.Pollid,
         authedUser,
         users: Object.keys(users).map(id => {
             return users[id]

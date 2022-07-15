@@ -1,16 +1,25 @@
 
 import React, { Component } from "react";
 import { connect } from 'react-redux';
-import {handleAsyncAddPoll} from '../actions/questions'
+import { Navigate } from "react-router-dom";
+import { handleAsyncAddPoll } from '../actions/questions'
 
 
 
 class NewQuestion extends Component {
 
-    state = {
-        optionOneText: '',
-        optionTwoText: '',
+    constructor(props) {
+        super(props);
+
+        this.state = {
+            optionOneText: '',
+            optionTwoText: '',
+            tohome:false
+        }
     }
+
+
+
 
     handleChange = (e) => {
         switch (e.target.id) {
@@ -29,20 +38,30 @@ class NewQuestion extends Component {
 
     }
 
+
     handleSubmit = (e) => {
         e.preventDefault();
         const { optionOneText, optionTwoText } = this.state
-        const{dispatch} = this.props
-        dispatch(handleAsyncAddPoll(optionOneText,optionTwoText))
+        const { dispatch } = this.props
+        dispatch(handleAsyncAddPoll(optionOneText, optionTwoText))
+      
 
         console.log('New Poll was added..');
         this.setState(() => ({
             optionOneText: '',
             optionTwoText: '',
+            tohome:true,
         }))
+        
+       
+
     }
 
     render() {
+        const{tohome}= this.state;
+        if(tohome)
+        return <Navigate to="/"/>
+        
         return (
             <div className="box-div">
                 <div className="box-title">
@@ -70,11 +89,14 @@ class NewQuestion extends Component {
                         />
                         <br />
 
+
                         <button
                             id="submit-btn"
                             disabled={this.state.optionOneText === '' || this.state.optionTwoText === ''}
                             type='submit'>
                             Submit</button>
+
+
                     </form>
                 </div>
 
