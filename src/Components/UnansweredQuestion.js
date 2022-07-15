@@ -2,13 +2,14 @@
 import React, { Component } from "react";
 import { connect } from 'react-redux';
 import { handleAsyncAddPoll, handleAsynSubmitAnswer } from '../actions/questions'
+import { Routes, Route, useParams } from 'react-router-dom';
 
 
 
 
 
 class UnansweredQuestion extends Component {
-
+  
 
     state = {
         answer: '',
@@ -55,17 +56,8 @@ class UnansweredQuestion extends Component {
 
 
     render() {
-       
-        debugger;
-        return(
-            <p>hiiii</p>
-        )
-    }
-
-        
-        /*
-        const { authedUser, questions, users } = this.props
-        const question_obj = questions.find((q) => { return q.id === pollid })
+        const {poll, authedUser, questions, users } = this.props
+        const question_obj = questions.find((q) => { return q.id === poll })
         const author_obj = users.find((u) => { return u.id === question_obj.author })
         const question_user_name = author_obj.name;
         const question_user_avatarURL = author_obj.avatarURL;
@@ -114,12 +106,13 @@ class UnansweredQuestion extends Component {
             </div>
         )
     }
-    */
+    
 }
 
 
-function mapStateToProps({ authedUser, users, questions }) {
+function mapStateToProps({ authedUser, users, questions ,poll}) {
     return {
+        poll,
         authedUser,
         users: Object.keys(users).map(id => {
             return users[id]
