@@ -1,17 +1,20 @@
 
 
-import React, { Component } from 'react';
+import React, { Component, Fragment } from 'react';
 import { connect } from 'react-redux';
 import { handleInitialData } from '../actions/shared'
 import LoginBox from './loginBox.js';
 import Home from './Home.js';
 import LoadingBar from 'react-redux-loading-bar'
+import Navbar from "./Navbar";
+import UserInfo from "./UserInfo";
+import NewQuestion from './NewQuestion.js';
+import Leaderboard from "./Leaderboard";
+
+import { BrowserRouter as Router, Routes, Route, Switch } from 'react-router-dom';
 
 
 
-//import Leaderboard from './Leaderboard.js';
-//import AnsweredQuestion from './AnsweredQuestion.js';
-//import UnansweredQuestion from './UnansweredQuestion.js';
 
 
 
@@ -23,23 +26,46 @@ class App extends Component {
 
   }
 
-
   render() {
     const { authedUser, isloading } = this.props;
     return (
+
+
       (isloading === true) ?
-        <LoadingBar/>
+        <LoadingBar />
         :
         (
+
           (authedUser === null) ?
             <LoginBox />
 
             :
 
-            <Home />
+            <Fragment>
+
+              <div>
+                <div className="homebar-container">
+                  <div className="navbar-container">
+                    <Navbar />
+                  </div>
+                  <div className="userinfo-container">
+                    <UserInfo />
+                  </div>
+                </div>
+                <hr></hr>
+              </div>
+
+
+
+              <Router>
+                <Routes>
+                  <Route path='/' element={<Home/>} />
+                  <Route path='/add' element={<NewQuestion/>} />
+                  <Route path='/leaderboard' element={<Leaderboard/>} />
+                </Routes>
+              </Router>
+            </Fragment>
         )
-
-
     );
 
   }

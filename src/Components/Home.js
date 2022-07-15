@@ -1,12 +1,5 @@
 import React, { Component } from "react";
-import Navbar from "./Navbar";
-import UserInfo from "./UserInfo";
 import PollList from './PollList.js';
-
-import NewQuestion from './NewQuestion.js';
-import AnsweredQuestion from './AnsweredQuestion.js'
-import UnasweredQuestion from './UnansweredQuestion.js'
-import Leaderboard from "./Leaderboard";
 
 
 class Home extends Component {
@@ -30,40 +23,7 @@ class Home extends Component {
     render() {
         return (
             <div className="App">
-                <div>
-                    <div className="homebar-container">
-                        <div className="navbar-container">
-                            <Navbar />
-                        </div>
-                        <div className="userinfo-container">
-                            <UserInfo />
-                        </div>
 
-                    </div>
-                    <hr></hr>
-                </div>
-
-
-                <Leaderboard />
-                <br /><br /><br /><br /><br /><br /><br /><br />
-                <br />
-                <hr />
-
-
-                <UnasweredQuestion Pollid={'8xf0y6ziyjabvozdd253nd'} />
-
-                <br /><br /><br /><br /><br /><br /><br /><br />
-                <br />
-                <hr />
-
-                <AnsweredQuestion Pollid={'8xf0y6ziyjabvozdd253nd'} />
-
-                <br /><br /><br /><br /><br /><br /><br /><br />
-                <br />
-                <hr />
-                <NewQuestion />
-                <br />
-                <hr />
                 <PollList PollTabID={this.state.poll_tab_id} ChangePollsTab={this.changePollsTab} />
 
             </div>
