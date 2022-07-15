@@ -1,8 +1,8 @@
 
 import React, { Component } from "react";
 import { connect } from 'react-redux';
-import { handleAsyncAddPoll, handleAsynSubmitAnswer } from '../actions/questions'
-import { Routes, Route, useParams } from 'react-router-dom';
+import { handleAsynSubmitAnswer } from '../actions/questions'
+import { Navigate } from "react-router-dom";
 
 
 
@@ -15,6 +15,7 @@ class UnansweredQuestion extends Component {
         answer: '',
         op1: false,
         op2: false,
+        tohome:false,
     }
 
     handleSelectChange = (e) => {
@@ -42,13 +43,14 @@ class UnansweredQuestion extends Component {
         e.preventDefault();
         /* to-do submit answer */
         const { answer } = this.state;
-        const { dispatch, pollid, authedUser } = this.props;
-        dispatch(handleAsynSubmitAnswer(pollid, answer));
+        const { dispatch, poll, authedUser } = this.props;
+        dispatch(handleAsynSubmitAnswer(poll, answer));
         console.log('Submit poll answer..');
         this.setState(() => ({
             answer: '',
             op1: false,
             op2: false,
+            tohome:true,
         }))
 
     }
@@ -56,6 +58,10 @@ class UnansweredQuestion extends Component {
 
 
     render() {
+        const{tohome}= this.state;
+        if(tohome)
+        return <Navigate to="/"/>
+
         const {poll, authedUser, questions, users } = this.props
         const question_obj = questions.find((q) => { return q.id === poll })
         const author_obj = users.find((u) => { return u.id === question_obj.author })

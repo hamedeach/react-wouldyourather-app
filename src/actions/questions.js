@@ -1,7 +1,7 @@
 
 import { saveNewQuestion, submitAnswer } from '../utils/api'
 import { showLoading, hideLoading } from 'react-redux-loading-bar'
-import {handleUserAddPoll} from '../actions/users'
+import {handleUserAddPoll ,handleUserAnswer} from '../actions/users'
 
 
 
@@ -24,7 +24,7 @@ function addQuestion(poll) {
     }
 }
 
-function submitAnswerAction(authedUser,qid, answer) {
+export function submitAnswerAction(authedUser,qid, answer) {
     return {
         type: SUBMIT_ANSWER,
         authedUser,
@@ -39,6 +39,7 @@ export function handleAsynSubmitAnswer(qid, answer) {
         dispatch(showLoading());
         return submitAnswer(authedUser, qid, answer).then((res) => {
             dispatch(submitAnswerAction(authedUser,qid, answer));
+            dispatch(handleUserAnswer(authedUser,qid,answer));
             dispatch(hideLoading);
         }).catch((e) => {
             console.warn('Error in handle submit answer', e)
@@ -67,3 +68,5 @@ export function handleAsyncAddPoll(optionOneText, optionTwoText) {
 
     }
 }
+
+
