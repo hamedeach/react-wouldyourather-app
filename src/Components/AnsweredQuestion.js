@@ -8,7 +8,6 @@ class AnsweredQuestion extends Component {
     render() {
         const { authedUser, poll, questions, users } = this.props
         const question_obj = questions.find((q) => { return q.id === poll })
-        debugger;
         const author_obj = users.find((u) => { return u.id === question_obj.author })
         const question_user_name = author_obj.name;
         const question_user_avatarURL = author_obj.avatarURL;
