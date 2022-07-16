@@ -8,7 +8,12 @@ import { Navigate } from "react-router-dom";
 
 
 
+
+
+
 class UnansweredQuestion extends Component {
+    
+    
   
 
     state = {
@@ -58,12 +63,22 @@ class UnansweredQuestion extends Component {
 
 
     render() {
+       
         const{tohome}= this.state;
         if(tohome)
         return <Navigate to="/"/>
 
+
         const {poll, authedUser, questions, users } = this.props
+
+        if(!authedUser)
+        return<Navigate to='/'/>
+
         const question_obj = questions.find((q) => { return q.id === poll })
+
+        if(!question_obj)
+        return<Navigate to='*'/>
+
         const author_obj = users.find((u) => { return u.id === question_obj.author })
         const question_user_name = author_obj.name;
         const question_user_avatarURL = author_obj.avatarURL;
@@ -116,7 +131,8 @@ class UnansweredQuestion extends Component {
 }
 
 
-function mapStateToProps({ authedUser, users, questions ,poll}) {
+function mapStateToProps({ authedUser, users, questions ,poll},props) {
+    
     return {
         poll,
         authedUser,

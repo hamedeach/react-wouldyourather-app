@@ -1,13 +1,22 @@
 
 import React, { Component } from "react";
 import { connect } from 'react-redux';
+import { Navigate } from "react-router-dom";
 
 class AnsweredQuestion extends Component {
 
 
     render() {
+
         const { authedUser, poll, questions, users } = this.props
+        if(!authedUser)
+        return<Navigate to='/'/>
+
         const question_obj = questions.find((q) => { return q.id === poll })
+
+        if(!question_obj)
+        return<Navigate to='*'/>
+
         const author_obj = users.find((u) => { return u.id === question_obj.author })
         const question_user_name = author_obj.name;
         const question_user_avatarURL = author_obj.avatarURL;
