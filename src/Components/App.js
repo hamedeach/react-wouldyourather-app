@@ -59,8 +59,12 @@ class App extends Component {
                   <Route path='/' element={<Home />} />
                   <Route path='/add' element={<NewQuestion />} />
                   <Route path='/leaderboard' element={<Leaderboard />} />
-                  <Route path='/question/:id' element={<UnansweredQuestion />} />
-                  <Route path='/result/:id' element={<AnsweredQuestion />} />
+                  <Route path='/question'>
+                    <Route path=':id' element={<UnansweredQuestion />} />
+                  </Route>
+                  <Route path='/result'>
+                    <Route path=':id' element={<AnsweredQuestion />} />
+                  </Route>
                   <Route path="*" element={<NotFound />} />
                 </Routes>
 
